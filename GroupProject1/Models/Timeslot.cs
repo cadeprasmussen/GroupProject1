@@ -12,13 +12,9 @@ namespace GroupProject1.Models
 		public int TimeslotId { get; set; }
 
 		[Required]
-		public string Date { get; set; }
+		public DateTime Date { get; set; }
 
 		[Required]
-		public string Time { get; set; }
-
-		[Required]
-		public bool isBooked { get; set; } = false
-
+		public bool isBooked { get; set; } = false;
 	}
 }

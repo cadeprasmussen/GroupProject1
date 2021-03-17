@@ -1,4 +1,5 @@
 ﻿using GroupProject1.Models;
+using GroupProject1.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,10 +13,12 @@ namespace GroupProject1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IGroupRepo _repository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IGroupRepo repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public IActionResult Index()
@@ -26,7 +29,12 @@ namespace GroupProject1.Controllers
         [HttpGet]
         public IActionResult SignupView()
         {
-            return View();
+            return View(new TimeslotList
+            {
+                Times = _repository.Times
+                    .Where(t => t.isBooked == false)
+                    .OrderBy(t => t.Date)
+            });
         }
 
         [HttpPost]
