@@ -14,5 +14,6 @@ namespace GroupProject1.Models
         }
 
         public DbSet<Group> Groups { get; set; }
+        public DbSet<Timeslot> Times { get; set; }
     }
 }

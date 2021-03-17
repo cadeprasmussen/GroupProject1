@@ -31,6 +31,8 @@ namespace GroupProject1
             {
                 options.UseSqlite(Configuration["ConnectionStrings:GroupListConnection"]);
             });
+
+            services.AddScoped<IGroupRepo, EFGroupRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +61,8 @@ namespace GroupProject1
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
