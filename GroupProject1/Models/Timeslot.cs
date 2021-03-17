@@ -18,7 +18,7 @@ namespace GroupProject1.Models
 		public string Time { get; set; }
 
 		[Required]
-		public bool isBooked { get; set; } = false
+		public bool isBooked { get; set; } = false;
 
 	}
 }

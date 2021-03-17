@@ -34,4 +34,7 @@ namespace GroupProject1.Models
                 string date6 = "3/27/2021";
 
                 context.Times.AddRange();
+            }
+        }
+    }
 }

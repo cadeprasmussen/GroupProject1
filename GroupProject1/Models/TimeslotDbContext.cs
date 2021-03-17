@@ -10,7 +10,7 @@ namespace GroupProject1.Models
     {
         public TimeslotDbContext(DbContextOptions<TimeslotDbContext> options) : base(options)
         {
-            ll
+           
         }
 
         public DbSet<Timeslot> Times { get; set; }
