@@ -1,0 +1,23 @@
+﻿@{
+            //Waiting on the model to be created
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Timeslot: Date, Time</h5>
+    </div>
+    <form asp-action="SignupForm" method="post">
+        <div class="card-body">
+            <!--replace these with asp-for-->
+            <input type="text" value="Date" disabled />
+            <input type="text" value="Time" disabled />
+            <input type="text" placeholder="Name of your group" />
+            <input type="text" placeholder="Size of your group" />
+            <input type="text" placeholder="Your phone number" />
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+    </form>
+</div>

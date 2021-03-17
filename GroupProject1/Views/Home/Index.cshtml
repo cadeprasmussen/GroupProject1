@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center p-4">
+    <h1 class="display-4 font-weight-bold">Layton Utah Temple Tours</h1>
+</div>
+
+<div class="row">
+    <div class="col-7">
+        <img style="width: 100%;" src="~/img/Layton-Temple.jpg" />
+    </div>
+    <div class="col-5 text-left">
+        <h6>General Tour Instructions:</h6>
+        <ul>
+            <li>Masks are required.</li>
+            <li>Park on Rosewood (west side of the temple) and meet at the Visitors Center trailer.</li>
+            <li>Dress casual, except on Sunday</li>
+        </ul>
+
+        <h6 class="mb-0">Special Accommodations:</h6>
+            <span class="small mb-3">&emsp;(check the appropriate box when signing up for a tour)</span>
+        <ul>
+            <li>Spanish-speaking tours are available on Thursday, Friday, Saturday or Sunday</li>
+        </ul>
+
+        <h6>Available Tours:</h6>
+
+        <ul>
+            <li>Tour (Outdoor): We have been asked to discontinue outside tours at this time.</li>
+            <li>Trailer Tour: All tours will be inside the trailer. Masks are required</li>
+        </ul>
+
+        <form asp-action="SignupView" method="get">
+            <input type="submit" class="btn-block btn-primary rounded-pill btn-outline-primary p-2" value="Sign Up for Tour"/>
+        </form>
+
+        <div class="mt-3">
+            <span class="font-weight-bold">Questions or Special Requests?</span><br />
+            Please Call us at: <span class="font-weight-bold">(801) 628-4488</span> OR <br />
+            Email us at: <span class="font-weight-bold">LaytonTempleTours@gmail.com</span>
+        </div>
+    </div>
+</div>
+
