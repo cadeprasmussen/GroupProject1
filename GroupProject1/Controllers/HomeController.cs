@@ -75,7 +75,7 @@ namespace GroupProject1.Controllers
 
         public IActionResult ViewAppointments()
         {
-            return View();
+            return View(_context.Groups);
         }
 
         public IActionResult Privacy()
