@@ -13,6 +13,7 @@ namespace GroupProject1.Migrations
                 {
                     GroupId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     GroupName = table.Column<string>(type: "TEXT", nullable: false),
                     GroupSize = table.Column<int>(type: "INTEGER", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),

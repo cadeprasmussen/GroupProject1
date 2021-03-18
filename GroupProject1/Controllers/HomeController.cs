@@ -14,11 +14,13 @@ namespace GroupProject1.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IGroupRepo _repository;
+        private GroupListContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IGroupRepo repository)
+        public HomeController(ILogger<HomeController> logger, IGroupRepo repository, GroupListContext context)
         {
             _logger = logger;
             _repository = repository;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -38,10 +40,38 @@ namespace GroupProject1.Controllers
         }
 
         [HttpPost]
-/*        public IActionResult SignUpView(appointment)
+        public IActionResult SignupView(string date)
         {
-            return View("SignUpForm");
-        }*/
+            TempData["Date"] = date;
+            return RedirectToAction("SignupForm");
+        }
+
+        [HttpGet]
+        public IActionResult SignupForm()
+        {
+            ViewData["Date"] = TempData["Date"];
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SignupForm(Group response)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Groups.Add(response);
+
+                var data = _context.Times.Where(t => t.Date == response.Date).SingleOrDefault();
+                data.isBooked = true;
+
+                _context.SaveChanges();
+            }
+            return View("SignupView", new TimeslotList
+            {
+                Times = _repository.Times
+                    .Where(t => t.isBooked == false)
+                    .OrderBy(t => t.Date)
+            });
+        }
 
         public IActionResult ViewAppointments()
         {

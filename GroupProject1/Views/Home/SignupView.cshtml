@@ -1,9 +1,4 @@
-﻿@{
-    string[] Times = {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM",
-        "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM" };
-}
-
-@model TimeslotList 
+﻿@model TimeslotList
 
 @section scripts {
     <script>
@@ -46,7 +41,7 @@
                     <td>@time.Date.ToString("t")</td>
                     <td>
                         <form asp-action="SignupView" method="post">
-                            <input id="Date" name="Date" type="hidden" value="@time.Date" />
+                            <input id="date" name="date" type="text" value="@time.Date.ToString("yyyy-MM-ddThh:mm")" hidden />
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                         </form>
                     </td>
@@ -55,3 +50,4 @@
         </tbody>
     </table>
 </div>
+
