@@ -10,6 +10,7 @@ namespace GroupProject1.Models
 {
     public class SeedData
     {
+        //This is where data for the database is seeded in
         public static void EnsurePopulated(IApplicationBuilder application)
 
         {
