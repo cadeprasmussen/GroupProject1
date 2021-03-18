@@ -5,15 +5,17 @@ using System.Threading.Tasks;
 
 namespace GroupProject1.Models
 {
-    public class EFTimeslotRepo : ITimeslotRepo
+    //
+    public class EFGroupRepo : IGroupRepo
     {
-        private TimeslotDbContext _context;
+        private GroupListContext _context;
 
-        public EFTimeslotRepo (TimeslotDbContext context)
+        public EFGroupRepo (GroupListContext context)
         {
             _context = context;
         }
 
+        public IQueryable<Group> Groups => _context.Groups;
         public IQueryable<Timeslot> Times => _context.Times;
     }
 }

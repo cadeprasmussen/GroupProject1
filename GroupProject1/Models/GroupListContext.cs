@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GroupProject1.Models
 {
+    //This is the Context for linking the database
     public class GroupListContext : DbContext
     {
         public GroupListContext(DbContextOptions<GroupListContext> options) : base(options)
@@ -14,5 +15,6 @@ namespace GroupProject1.Models
         }
 
         public DbSet<Group> Groups { get; set; }
+        public DbSet<Timeslot> Times { get; set; }
     }
 }

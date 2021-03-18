@@ -3,6 +3,8 @@
         "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM" };
 }
 
+@model TimeslotList 
+
 @section scripts {
     <script>
         $(document).ready(function () {
@@ -36,80 +38,15 @@
         </thead>
 
         <tbody>
-            @foreach (var time in Times)
+            @foreach (var time in Model.Times)
             {
                 <tr>
-                    <td>4/22/2021</td>
-                    <td>@time</td>
-                    <td>@time</td>
+                    <td>@time.Date.ToString("d")</td>
+                    <td>@time.Date.ToString("t")</td>
+                    <td>@time.Date.ToString("t")</td>
                     <td>
-                        <form asp-action="SignupForm" method="post">
-                            <input id="Date" name="Date" type="hidden" value="4/22/2021" />
-                            <input id="Time" name="Time" type="hidden" value="@time" />
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-
-            @foreach (var time in Times)
-            {
-                <tr>
-                    <td>4/23/2021</td>
-                    <td>@time</td>
-                    <td>@time</td>
-                    <td>
-                        <form asp-action="SignupForm" method="post">
-                            <input id="Date" name="Date" type="hidden" value="4/23/2021" />
-                            <input id="Time" name="Time" type="hidden" value="@time" />
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-
-            @foreach (var time in Times)
-            {
-                <tr>
-                    <td>4/24/2021</td>
-                    <td>@time</td>
-                    <td>@time</td>
-                    <td>
-                        <form asp-action="SignupForm" method="post">
-                            <input id="Date" name="Date" type="hidden" value="4/24/2021" />
-                            <input id="Time" name="Time" type="hidden" value="@time" />
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-
-            @foreach (var time in Times)
-            {
-                <tr>
-                    <td>4/25/2021</td>
-                    <td>@time</td>
-                    <td>@time</td>
-                    <td>
-                        <form asp-action="SignupForm" method="post">
-                            <input id="Date" name="Date" type="hidden" value="4/25/2021" />
-                            <input id="Time" name="Time" type="hidden" value="@time" />
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-
-            @foreach (var time in Times)
-            {
-                <tr>
-                    <td>4/26/2021</td>
-                    <td>@time</td>
-                    <td>@time</td>
-                    <td>
-                        <form asp-action="SignupForm" method="post">
-                            <input id="Date" name="Date" type="hidden" value="4/26/2021" />
-                            <input id="Time" name="Time" type="hidden" value="@time" />
+                        <form asp-action="SignupView" method="post">
+                            <input id="Date" name="Date" type="hidden" value="@time.Date" />
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                         </form>
                     </td>
