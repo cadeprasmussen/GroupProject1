@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupProject1.Migrations
 {
     [DbContext(typeof(GroupListContext))]
-    [Migration("20210317213735_Initial")]
+    [Migration("20210318022005_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,9 @@ namespace GroupProject1.Migrations
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
                         .IsRequired()

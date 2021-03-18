@@ -13,6 +13,7 @@ namespace GroupProject1.Models
 		public int TimeslotId { get; set; }
 
 		[Required]
+		[DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]
 		public DateTime Date { get; set; }
 
 		[Required]
