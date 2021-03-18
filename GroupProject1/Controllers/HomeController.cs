@@ -38,10 +38,10 @@ namespace GroupProject1.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignUpView(appointment)
+/*        public IActionResult SignUpView(appointment)
         {
             return View("SignUpForm");
-        }
+        }*/
 
         public IActionResult ViewAppointments()
         {
