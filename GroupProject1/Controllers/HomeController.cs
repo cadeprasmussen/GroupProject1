@@ -57,7 +57,7 @@ namespace GroupProject1.Controllers
         public IActionResult SignupForm(Group response)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 _context.Groups.Add(response);
 
                 var data = _context.Times.Where(t => t.Date == response.Date).SingleOrDefault();
