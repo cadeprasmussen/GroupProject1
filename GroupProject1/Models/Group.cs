@@ -6,7 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GroupProject1.Models
 {
-    public class Group
+    //This is the model that will be used for the group data that is stored in the database
+	public class Group
     {
 		[Key]
 		public int GroupId { get; set; }

@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GroupProject1.Models
 {
+	//This is the model that will be used for the timeslot data in the database
 	public class Timeslot
 	{
 		[Key]
