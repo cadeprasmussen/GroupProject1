@@ -1,7 +1,7 @@
 ﻿@{
     string date = ViewData["Date"].ToString();
     DateTime newDate = DateTime.Parse(date);
-    date = newDate.ToString("yyyy-MM-ddThh:mm");
+    date = newDate.ToString("yyyy-MM-ddTHH:mm");
     ViewData["Booked"] = true;
 }
 

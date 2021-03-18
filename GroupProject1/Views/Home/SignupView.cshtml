@@ -41,7 +41,7 @@
                     <td>@time.Date.ToString("t")</td>
                     <td>
                         <form asp-action="SignupView" method="post">
-                            <input id="date" name="date" type="text" value="@time.Date.ToString("yyyy-MM-ddThh:mm")" hidden />
+                            <input id="date" name="date" type="text" value="@time.Date.ToString("yyyy-MM-ddTHH:mm")" hidden />
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                         </form>
                     </td>
