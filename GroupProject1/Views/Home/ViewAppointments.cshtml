@@ -1,13 +1,13 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<!--@{
+@{
     ViewBag.Title = "View All Current Appointments";
 }
 
-@**@model IEnumerable<GroupProject1.Models.Group>-->
-<!-- create appointment list table -->
-<!--<div>
+@model IEnumerable<GroupProject1.Models.Group>
+
+<div>
     <p>Group Information:</p>
 
     <table class="tab-content table">
@@ -16,18 +16,18 @@
             <th>Group Size</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Time</th>
-        </tr>-->
-<!-- loop through each appointment row -->
-<!--@@*foreach (GroupProject1.Models.Group x in Model)
+            <th>Date</th>
+        </tr>
+
+@foreach (GroupProject1.Models.Group x in Model)
         {
-            <tr>@*
+            <tr>
                 <td>@x.GroupName</td>
                 <td>@x.GroupSize</td>
                 <td>@x.Email</td>
                 <td>@x.PhoneNumber</td>
-                <td>@x.Time</td>
-            </tr>*@
+                <td>@x.Date</td>
+            </tr>
         }
     </table>
-</div>-->
+</div>
