@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace GroupProject1.Models.ViewModels
 {
+    //Model for the timeslots
     public class TimeslotList
     {
         public IEnumerable<Timeslot> Times { get; set; }

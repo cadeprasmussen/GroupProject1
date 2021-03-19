@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GroupProject1.Models
 {
-    //
+    //Model for the context
     public class EFGroupRepo : IGroupRepo
     {
         private GroupListContext _context;
