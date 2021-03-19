@@ -28,7 +28,7 @@ namespace GroupProject1.Models
 
                 string[] dates = { "3/22/2021", "3/23/2021", "3/24/2021", "3/25/2021", "3/26/2021", "3/27/2021" };
 
-                // create an array of timeslots with a length equal to number of timeslots
+                // create a list of timeslots to populate
                 List<Timeslot> timeslots = new List<Timeslot>();
 
                 // add each timeslot to the array

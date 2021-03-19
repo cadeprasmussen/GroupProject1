@@ -31,6 +31,7 @@ namespace GroupProject1.Controllers
         [HttpGet]
         public IActionResult SignupView()
         {
+            // return timeslots that have not been booked
             return View(new TimeslotList
             {
                 Times = _repository.Times
@@ -43,12 +44,14 @@ namespace GroupProject1.Controllers
         public IActionResult SignupView(string date)
         {
             TempData["Date"] = date;
+            // store the date to pass to the signup form
             return RedirectToAction("SignupForm");
         }
 
         [HttpGet]
         public IActionResult SignupForm()
         {
+            // grab the temp data and move it into the view data
             ViewData["Date"] = TempData["Date"];
             return View();
         }
@@ -56,6 +59,7 @@ namespace GroupProject1.Controllers
         [HttpPost]
         public IActionResult SignupForm(Group response)
         {
+            // add a group and set the time to booked if valid
             if (ModelState.IsValid)
             {                
                 _context.Groups.Add(response);
